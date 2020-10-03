@@ -1,0 +1,5 @@
+#!/home/erick-hdz/app_flask_graphql_init/venv/bin/python
+from __future__ import absolute_import
+import sys
+from trashcli.cmds import restore as main
+sys.exit(main())

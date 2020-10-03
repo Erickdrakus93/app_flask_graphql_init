@@ -1,0 +1,23 @@
+# Docker-compose-yml
+
+version: "3.5"
+
+networks:
+  fluxit:
+    name: fluxit
+
+
+services:
+
+  server:
+    container_name: skill_app
+    build: .
+    hostname: skills_app
+    networks:
+      - fluxit
+    ports:
+    - "5000:5000"
+    volumes: [".:/usr/src/app_flak_graphql_init"]
+    restart: always
+    environment:
+      ENV: DEVELOPMENT

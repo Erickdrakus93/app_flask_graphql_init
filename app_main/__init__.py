@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_graphql import GraphQLView
 
 db = SQLAlchemy()
 
@@ -16,14 +15,3 @@ def create_app():
         return "The test is ok"
 
     return app
-
-
-def create_environment_configuration():
-    """
-    This function is to set the configuration of the app
-    :return: Configuration Environment
-    """
-    if Config.ENV == 'TESTING':
-        return "config.TestingConfiguration"
-    else:
-        return "config.DevelopmentConfig"
